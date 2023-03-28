@@ -1,12 +1,36 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
   const [bill, setBill] = useState(0);
   const [tip, setTip] = useState(0);
-  const [customTip, setCustomTip] = useState(0);
+  const [manualTip, setManualTip] = useState(0);
   const [people, setPeople] = useState(0);
-  const [tipAmount, setTipAmount] = useState(4.27);
+  const [tipAmount, setTipAmount] = useState(0);
   const [total, setTotal] = useState(32.79);
+
+  const handleSetTip = (e) => {
+    if (e.target.value === "Custom") {
+      setTip(manualTip);
+    } else {
+      setTip(e.target.value);
+    }
+  }
+
+  const calculateTip = () => {
+    console.log(bill)
+    setTotal(bill * tip / 100);
+    setTipAmount(bill * tip / 100 / people)
+  }
+
+  const resetForm = () => {
+    setBill(0);
+    setTip(0);
+    setPeople(0);
+  }
+
+  useEffect(()=>{
+    calculateTip()
+  }, [bill, tip, people])
 
   return (
     <div className="App">
@@ -16,6 +40,8 @@ function App() {
           <div className="bill-input-block">
             <label htmlFor="bill-input">Bill</label>
             <input
+            onChange={(e) => setBill(e.target.value)}
+            value={bill}
               type="number"
               id="bill-input"
               name="bill-input"
@@ -33,6 +59,8 @@ function App() {
                     name="tip-button"
                     id={tip}
                     className="tip-button"
+                    value={tip}
+                    onClick={handleSetTip}
                   >
                     {tip}
                   </button>
@@ -44,12 +72,20 @@ function App() {
                 placeholder="Custom"
                 id="manual-tip-input"
                 className="manual-tip"
+                value={tip}
+                onChange={handleSetTip}
               />
             </div>
           </div>
           <div className="people-number-block">
             <label htmlFor="people-number">Number of people</label>
-            <input type="number" id="people-number" name="people-number" />
+            <input 
+            type="number" 
+            id="people-number" 
+            name="people-number" 
+            onChange={(e) => setPeople(e.target.value)}
+            value={people}
+            />
           </div>
         </div>
         <div className="tip-outputs-container">
@@ -67,7 +103,7 @@ function App() {
             </div>
             <div className="tip-result-value">${total}</div>
           </div>
-          <button className="reset-button">RESET</button>
+          <button className="reset-button" onClick={resetForm}>RESET</button>
         </div>
       </div>
     </div>
