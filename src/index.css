@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap");
+
+:root {
+  --font-family: "Space Mono", monospace;
+  --font-weight: 700;
+
+  --color-strong-cyan: hsl(172, 67%, 45%);
+  --color-very-dark-cyan: hsl(183, 100%, 15%);
+  --color-dark-grayish-cyan: hsl(186, 14%, 43%);
+  --color-grayish-cyan: hsl(184, 14%, 56%);
+  --color-light-grayish-cyan: hsl(185, 41%, 84%);
+  --color-very-light-grayish-cyan: hsl(189, 41%, 97%);
+  --color-white: hsl(0, 0%, 100%);
+
+  --font-size-input: 1.5rem;
+  --font-size-label: 1rem;
+}
+
+body {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight);
+  background-color: var(--color-light-grayish-cyan);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  min-height: 100svh;
+}
+
+.logo-container {
+  background-image: url("/public/images/logo.svg");
+  min-height: 3.4375rem;
+  min-width: 5.375rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.component-container {
+  background-color: var(--color-white);
+  border-radius: 1.5625rem;
+}
+#bill-input {
+  width: 100%;
+}
+
+label {
+  font-size: var(--font-size-label);
+  color: var(--color-dark-grayish-cyan);
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+  font-family: var(--font-family);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+button {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight);
+  font-size: var(--font-size-input);
+  color: var(--color-white);
+  background-color: var(--color-very-dark-cyan);
+  border: none;
+  border-radius: 0.3125rem;
+  padding: .375rem .875rem;
+  cursor: pointer;
+}
+
+.tip-buttons-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 0.875rem;
+}
