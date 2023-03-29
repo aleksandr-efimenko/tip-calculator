@@ -84,7 +84,7 @@ input::-webkit-inner-spin-button {
   border-radius: 0.3125rem;
   padding: 0.375rem 0.875rem;
 }
-.tipButton.active {
+.active {
   background-color: var(--color-strong-cyan);
   color: var(--color-very-dark-cyan);
 }
@@ -101,33 +101,33 @@ input::-webkit-inner-spin-button {
   margin-inline-start: 1.5rem;
   border-radius: 0.9375rem;
   background-color: var(--color-very-dark-cyan);
-  /* width: 100%; */
-  flex: 1;
+  width: 100%;
+  /* flex: 1; */
   position: relative;
 }
-.tip-result-row {
+.tipResultRow {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.tip-result-label {
+.tipResultLabel {
   font-size: var(--font-size-label);
   line-height: var(--lh-label);
   color: var(--color-white);
 }
-.tip-result-label-description {
+.tipResultLabelDescription {
   font-size: .8125rem;
   color: var(--color-grayish-cyan);
   line-height: 1.1875rem;
 }
-.tip-result-value {
+.tipResultValue {
   font-size: var(--font-size-result);
   line-height: var(--lh-result);
   letter-spacing: var(--ls-result);
   color: var(--color-strong-cyan);
 }
-.reset-button {
+.resetButton {
   width: 100%;
   height: 48px;
   background-color: var(--color-strong-cyan);
