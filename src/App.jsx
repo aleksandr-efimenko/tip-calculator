@@ -1,19 +1,20 @@
 import { useEffect, useState } from "react";
 import TipOutput from "./components/TipOutput";
 import TipInput from "./components/TipInput";
+import styles from './components/TipStyles.module.css';
 
 function App() {
   const [bill, setBill] = useState(0);
-  const [tip, setTip] = useState(0);
-  const [manualTip, setManualTip] = useState(0);
+  const [tip, setTip] = useState(15);
   const [people, setPeople] = useState(0);
   const [tipAmount, setTipAmount] = useState(0);
-  const [total, setTotal] = useState(32.79);
+  const [total, setTotal] = useState(0);
 
   const handleSetTip = (e) => {
     const tip = e.target.value;
     console.log('tip', e.target.value);
     if (!tip) return;
+    setTip(tip);
   };
 
   const calculateTip = () => {
@@ -34,8 +35,8 @@ function App() {
 
   return (
     <div className="App">
-      <div className="logo-container"></div>
-      <div className="component-container">
+      <div className={styles['logo-container']}></div>
+      <div className={styles['component-container']}>
         <TipInput
           handleSetTip={handleSetTip}
           setBill={setBill}
