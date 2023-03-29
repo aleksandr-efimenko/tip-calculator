@@ -9,13 +9,12 @@ export default function TipInput({
   setBill,
   people,
   setPeople,
-  isManualTip,
-  setIsManualTip,
+  manualTip
 }) {
   const tipButtons = [5, 10, 15, 25, 50];
 
   return (
-    <div className={styles.TipInputsContainer}>
+    <div className={styles.tipInputsContainer}>
       <div className={styles.billInputBlock}>
         <label htmlFor="bill-input">Bill</label>
         <input
@@ -35,10 +34,10 @@ export default function TipInput({
             return (
               <button
                 key={selectedTip}
-                name="tip-button"
                 id={selectedTip}
+                name="tip-button"
                 className={classNames(styles.tipButton, {
-                  [styles.active]: selectedTip === tip && !isManualTip,
+                  [styles.active]: selectedTip === tip && !manualTip,
                 })}
                 value={selectedTip}
                 onClick={handleSetTip}
@@ -53,7 +52,7 @@ export default function TipInput({
             placeholder="Custom"
             id={styles.manualTipInput}
             className={styles.manualTip}
-            value={tip}
+            value={manualTip}
             onChange={handleSetTip}
           />
         </div>
@@ -61,8 +60,7 @@ export default function TipInput({
       <div className={styles.peopleNumberBlock}>
         <label htmlFor="people-number">Number of people</label>
         <input
-        min={1}
-        
+          min={1}
           type="number"
           id={styles.peopleNumber}
           name="people-number"
