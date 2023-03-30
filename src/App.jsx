@@ -11,18 +11,6 @@ function App() {
   const [total, setTotal] = useState(0);
   const [manualTip, setManualTip] = useState("");
 
-  const handleSetTip = (e) => {
-    const tip = Number(e.target.value);
-    if (!tip) return;
-    if (e.target.id === styles.manualTipInput) {
-      setTip(0);
-      setManualTip(tip);
-    } else {
-      setManualTip("");
-      setTip(tip);
-    }
-  };
-
   const calculateTip = () => {
     if (!bill) return;
     if (!people) return;
@@ -49,14 +37,14 @@ function App() {
       <div className={styles.logoContainer}></div>
       <div className={styles.componentContainer}>
         <TipInput
-          tip={tip}
-          handleSetTip={handleSetTip}
           bill={bill}
           setBill={setBill}
-          people={people}
-          setPeople={setPeople}
+          tip={tip}
+          setTip={setTip}
           manualTip={manualTip}
           setManualTip={setManualTip}
+          people={people}
+          setPeople={setPeople}
         />
         <TipOutput
           disabledReset={!bill && !tip && !people}
