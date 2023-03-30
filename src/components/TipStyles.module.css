@@ -15,11 +15,12 @@
   padding: 2rem 2rem 2rem 3rem;
   min-width: 50rem;
   max-width: 57.5rem;
+  gap: 3rem;
 }
 
 .tipInputsContainer {
   flex: 1;
-  padding: 0.8125rem 1.5rem 13px 0;
+  padding: 0.8125rem 0 13px 0;
 
   display: flex;
   flex-direction: column;
@@ -30,17 +31,11 @@
   padding: 0.375rem 0.875rem;
 }
 #billInput {
-  position: relative;
+  background: url('/public/images/icon-dollar.svg') no-repeat scroll 20px;
 }
 
-#billInput::before {
-  content: none;
-  position: absolute;
-  left: 10px;
-  top: 0;
-  width: 20px;
-  background-image: url("/public/images/icon-dollar.svg") center / contain
-    no-repeat;
+#peopleNumber {
+  background: url('/public/images/icon-person.svg') no-repeat scroll 20px;
 }
 
 label {
@@ -115,10 +110,10 @@ input[type="number"].wrongInput {
 }
 
 .tipOutputsContainer {
-  margin-inline-start: 1.5rem;
+  /* margin-inline-start: 1.5rem; */
   border-radius: 0.9375rem;
   background-color: var(--color-very-dark-cyan);
-  max-width: 26.25rem;
+  min-width: 25.8125rem;
   overflow: auto;
   flex: 1;
   position: relative;
@@ -138,6 +133,10 @@ input[type="number"].wrongInput {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.tipResultContainer {
+  min-width: fit-content;
+  margin-inline-end: 1rem;
 }
 
 .tipResultLabel {

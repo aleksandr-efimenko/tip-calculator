@@ -26,6 +26,8 @@ function App() {
     setTip("");
     setManualTip("");
     setPeople("");
+    setTipAmount(0);
+    setTotal(0);
   };
 
   useEffect(() => {

@@ -67,6 +67,7 @@ export default function TipInput({
             <p className={styles.wrongInputMessage}>Can't be zero</p>
           )}
         </div>
+        
         <input
           onChange={handleEnterBill}
           value={bill}
