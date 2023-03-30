@@ -47,7 +47,7 @@ function App() {
           setPeople={setPeople}
         />
         <TipOutput
-          disabledReset={!bill && !tip && !people}
+          disabledReset={!bill && !tip && !manualTip && !people}
           tipAmount={tipAmount}
           total={total}
           resetForm={resetForm}

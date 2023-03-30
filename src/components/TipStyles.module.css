@@ -121,10 +121,15 @@ input[type="number"].wrongInput {
   max-width: 26.25rem;
   overflow: auto;
   flex: 1;
+  position: relative;
 }
 .tipOutputsInner {
   margin: 2.5rem;
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
