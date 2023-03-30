@@ -4,21 +4,21 @@ import TipInput from "./components/TipInput";
 import styles from "./components/TipStyles.module.css";
 
 function App() {
-  const [bill, setBill] = useState(0);
-  const [tip, setTip] = useState(15);
-  const [people, setPeople] = useState('');
+  const [bill, setBill] = useState("");
+  const [tip, setTip] = useState(0);
+  const [people, setPeople] = useState("");
   const [tipAmount, setTipAmount] = useState(0);
   const [total, setTotal] = useState(0);
-  const [manualTip, setManualTip] = useState('');
+  const [manualTip, setManualTip] = useState("");
 
   const handleSetTip = (e) => {
     const tip = Number(e.target.value);
     if (!tip) return;
-    if(e.target.id ===styles.manualTipInput) {
+    if (e.target.id === styles.manualTipInput) {
       setTip(0);
       setManualTip(tip);
     } else {
-      setManualTip('');
+      setManualTip("");
       setTip(tip);
     }
   };
@@ -28,16 +28,16 @@ function App() {
     if (!people) return;
     const tipToCalculate = manualTip ? manualTip : tip;
     const tipAmount = ((bill * tipToCalculate) / 100 / people).toFixed(2);
-    const total = ((bill * tipToCalculate / 100  + bill) / people).toFixed(2);
+    const total = (((bill * tipToCalculate) / 100 + bill) / people).toFixed(2);
     setTotal(total);
     setTipAmount(tipAmount);
   };
 
   const resetForm = () => {
-    setBill(0);
-    setTip(0);
-    setManualTip('');
-    setPeople(0);
+    setBill("");
+    setTip("");
+    setManualTip("");
+    setPeople("");
   };
 
   useEffect(() => {
@@ -58,7 +58,12 @@ function App() {
           manualTip={manualTip}
           setManualTip={setManualTip}
         />
-        <TipOutput tipAmount={tipAmount} total={total} resetForm={resetForm} />
+        <TipOutput
+          disabledReset={!bill && !tip && !people}
+          tipAmount={tipAmount}
+          total={total}
+          resetForm={resetForm}
+        />
       </div>
     </div>
   );

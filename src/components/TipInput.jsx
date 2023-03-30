@@ -23,7 +23,9 @@ export default function TipInput({
           type="number"
           id={styles.billInput}
           name="bill-input"
-          placeholder=""
+          placeholder="0"
+          min={0}
+          max={1000000}
           step="0.01"
         />
       </div>
@@ -64,6 +66,7 @@ export default function TipInput({
           type="number"
           id={styles.peopleNumber}
           name="people-number"
+          placeholder="0"
           onChange={(e) => setPeople(Number(e.target.value))}
           value={people}
         />

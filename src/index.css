@@ -11,6 +11,10 @@
   --color-light-grayish-cyan: hsl(185, 41%, 84%);
   --color-very-light-grayish-cyan: hsl(189, 41%, 97%);
   --color-white: hsl(0, 0%, 100%);
+  --color-light-cyan: hsl(173, 61%, 77%);
+  --color-red: hsl(13, 70%, 61%);
+  --color-very-dark-grayish-cyan: hsl(180, 18%, 40%);
+  --color-disables-button: hsl(183, 78%, 24%);
 
   --font-size-input: 1.5rem;
   --font-size-label: 1rem;
@@ -42,4 +46,9 @@ button {
   cursor: pointer;
   border: none;
   outline: none;
+}
+
+button:hover {
+  background-color: var(--color-light-cyan);
+  color: var(--color-very-dark-cyan);
 }

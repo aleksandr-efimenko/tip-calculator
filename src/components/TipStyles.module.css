@@ -62,17 +62,27 @@ input[type="number"] {
   text-align: right;
   font-size: var(--font-size-input);
   outline: none;
-  transition: 0.3s;
   padding: 6px 17px;
+  ;
+}
+input[type="number"]:hover {
+  outline: .0625rem solid var(--color-strong-cyan);
 }
 
 input[type="number"]:focus {
-  border: 0.125rem solid var(--color-strong-cyan);
+  outline: 0.125rem solid var(--color-strong-cyan);
+}
+input::placeholder {
+  color: var(--color-very-dark-cyan);
+  opacity: .35;
 }
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
+}
+.wrong-input {
+  border: 0.0625rem solid var(--color-red);
 }
 
 .tipButton {
@@ -100,7 +110,8 @@ input::-webkit-inner-spin-button {
   margin-inline-start: 1.5rem;
   border-radius: 0.9375rem;
   background-color: var(--color-very-dark-cyan);
-  /* width: 100%; */
+  max-width: 26.25rem;
+  overflow: auto;
   flex: 1;
 }
 .tipOutputsInner {
@@ -142,3 +153,8 @@ input::-webkit-inner-spin-button {
   font-weight: var(--font-weight);
   font-size: var(--font-size-reset-button);
 }
+
+.resetButton:disabled {
+  background-color: var(--color-disables-button);
+}
+

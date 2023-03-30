@@ -1,12 +1,15 @@
 import React from "react";
 import styles from "./TipStyles.module.css";
 
-export default function TipOutput({tipAmount, total, resetForm}) {
-  
+export default function TipOutput({
+  tipAmount,
+  total,
+  resetForm,
+  disabledReset,
+}) {
   return (
     <div className={styles.tipOutputsContainer}>
       <div className={styles.tipOutputsInner}>
-        
         <div className={styles.tipResults}>
           <div className={styles.tipResultRow}>
             <div className={styles.tipResultContainer}>
@@ -23,7 +26,11 @@ export default function TipOutput({tipAmount, total, resetForm}) {
             <div className={styles.tipResultValue}>${total}</div>
           </div>
         </div>
-        <button className={styles.resetButton} onClick={resetForm}>
+        <button
+          disabled={disabledReset}
+          className={styles.resetButton}
+          onClick={resetForm}
+        >
           RESET
         </button>
       </div>
