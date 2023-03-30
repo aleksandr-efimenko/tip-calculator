@@ -13,7 +13,7 @@
   border-radius: 1.5625rem;
   display: flex;
   padding: 2rem 2rem 2rem 3rem;
-  min-width: 50rem;
+  min-width: 56rem;
   max-width: 57.5rem;
   gap: 3rem;
 }
@@ -31,11 +31,13 @@
   padding: 0.375rem 0.875rem;
 }
 #billInput {
-  background: url('/public/images/icon-dollar.svg') no-repeat scroll 20px;
+  background: url("/public/images/icon-dollar.svg") no-repeat scroll 20px;
+  background-color: var(--color-very-light-grayish-cyan);
 }
 
 #peopleNumber {
-  background: url('/public/images/icon-person.svg') no-repeat scroll 20px;
+  background: url("/public/images/icon-person.svg") no-repeat scroll 20px;
+  background-color: var(--color-very-light-grayish-cyan);
 }
 
 label {
@@ -58,10 +60,9 @@ input[type="number"] {
   font-size: var(--font-size-input);
   outline: none;
   padding: 6px 17px;
-  ;
 }
 input[type="number"]:hover {
-  outline: .0625rem solid var(--color-strong-cyan);
+  outline: 0.0625rem solid var(--color-strong-cyan);
 }
 
 input[type="number"]:focus {
@@ -69,7 +70,7 @@ input[type="number"]:focus {
 }
 input::placeholder {
   color: var(--color-very-dark-cyan);
-  opacity: .35;
+  opacity: 0.35;
 }
 
 input::-webkit-outer-spin-button,
@@ -85,7 +86,7 @@ input[type="number"].wrongInput {
   justify-content: space-between;
 }
 
-.wrongInputMessage{
+.wrongInputMessage {
   color: var(--color-red);
 }
 .tipButton {
@@ -171,3 +172,37 @@ input[type="number"].wrongInput {
   cursor: not-allowed;
 }
 
+@media (max-width: 768px) {
+  .logoContainer {
+    margin-block: 3.125rem 2.5rem;
+  }
+
+  .componentContainer {
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+    gap: 2rem;
+    min-width: 100%;
+  }
+  .tipInputsContainer {
+    padding: 0 0.5rem;
+    gap: 2rem;
+  }
+  .tipButtonsContainer {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+  }
+
+  .tipOutputsContainer {
+    min-width: 100%;
+  }
+  .tipOutputsInner {
+    position: relative;
+    margin: 1.5rem;
+  }
+  .tipResultsContainer {
+    margin-block-start: 0.8125rem;
+  }
+  .resetButton {
+    margin-block-start: 2rem;
+  }
+}
