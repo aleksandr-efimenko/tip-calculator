@@ -21,7 +21,9 @@
   --lh-label: 1.5rem;
 
   --font-size-reset-button: 1.25rem;
-  --font-size-result: 3rem;
+  --font-size-result-d: 3rem;
+  --font-size-result-m: 2rem;
+  --font-size-result: var(--font-size-result-d);
   --lh-result: 4.4375rem;
   --ls-result: -0.0625rem;
 }
@@ -51,4 +53,10 @@ button {
 button:hover {
   background-color: var(--color-light-cyan);
   color: var(--color-very-dark-cyan);
+}
+
+@media (max-width: 768px) {
+  :root {
+    --font-size-result: var(--font-size-result-m);
+  }
 }
