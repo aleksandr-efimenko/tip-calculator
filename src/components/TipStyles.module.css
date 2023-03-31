@@ -137,7 +137,7 @@ input.wrongInput {
 }
 .tipResultContainer {
   min-width: fit-content;
-  margin-inline-end: 1rem;
+  margin-inline-end: .5rem;
 }
 
 .tipResultLabel {

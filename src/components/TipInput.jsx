@@ -95,7 +95,7 @@ export default function TipInput({
         <div className={styles.inputLabelBox}>
           <label htmlFor="tip-input">Select Tip %</label>
           {manualTip === 0 && (
-            <p className={styles.wrongInputMessage}>Can't be zero</p>
+            <p className={styles.wrongInputMessage}>Shouldn't be zero</p>
           )}
         </div>
         <div className={styles.tipButtonsContainer}>

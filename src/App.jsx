@@ -13,7 +13,11 @@ function App() {
 
   const calculateTip = () => {
     if (!bill) return;
-    if (!people) return;
+    if (!bill || !people) {
+      setTotal(0);
+      setTipAmount(0);
+      return;
+    };
     const tipToCalculate = manualTip ? manualTip : tip;
     const tipAmount = ((bill * tipToCalculate) / 100 / people).toFixed(2);
     const total = (((bill * tipToCalculate) / 100 + bill) / people).toFixed(2);
@@ -31,6 +35,7 @@ function App() {
   };
 
   useEffect(() => {
+
     calculateTip();
   }, [bill, tip, manualTip, people]);
 
