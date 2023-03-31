@@ -31,7 +31,7 @@
 }
 #manualTipInput::placeholder {
   opacity: 0.75;
-  
+
 }
 #billInput {
   background: url("/images/icon-dollar.svg") no-repeat scroll 1.25rem;
@@ -153,12 +153,15 @@ input.wrongInput {
   color: var(--color-grayish-cyan);
   line-height: 1.1875rem;
 }
+
+
 .tipResultValue {
   font-size: var(--font-size-result);
   line-height: var(--lh-result);
   letter-spacing: var(--ls-result);
   color: var(--color-strong-cyan);
 }
+
 
 .resetButton {
   width: 100%;
