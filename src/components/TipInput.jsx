@@ -18,18 +18,26 @@ export default function TipInput({
   const maxPeople = 100;
 
   const handleEnterBill = (e) => {
+    if (!e.target.value) {
+      setBill('');
+      return;
+    }
     let value = Number(e.target.value);
-    console.log(typeof value);
     if (value > maxBill) {
       value = maxBill;
     }
     if (value < 0) {
       value = value * -1;
     }
+
     setBill(value);
   };
 
   const handleEnterManualTip = (e) => {
+    if (!e.target.value) {
+      setManualTip('');
+      return;
+    }
     let value = Number(e.target.value);
     if (value > maxManualTip) {
       value = maxManualTip;
@@ -48,6 +56,10 @@ export default function TipInput({
   };
 
   const handleEnterPeople = (e) => {
+    if (!e.target.value) {
+      setPeople('');
+      return;
+    }
     let value = Number(e.target.value);
     if (value > maxPeople) {
       value = maxPeople;
