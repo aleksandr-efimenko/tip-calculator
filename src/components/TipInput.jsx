@@ -108,7 +108,7 @@ export default function TipInput({
             step="0.5"
             placeholder="Custom"
             id={styles.manualTipInput}
-            className={styles.manualTip}
+            className={classNames(styles.manualTip, {[styles.wrongInput]: manualTip === 0}) }
             value={manualTip}
             onChange={handleEnterManualTip}
           />

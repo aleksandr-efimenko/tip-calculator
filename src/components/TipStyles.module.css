@@ -1,5 +1,5 @@
 .logoContainer {
-  background-image: url("/public/images/logo.svg");
+  background-image: url("./images/logo.svg");
   min-height: 3.4375rem;
   min-width: 5.375rem;
   background-repeat: no-repeat;
@@ -27,16 +27,16 @@
   gap: 2.5rem;
 }
 #manualTipInput {
-  text-align: center;
+  /* text-align: center; */
   padding: 0.375rem 0.875rem;
 }
 #billInput {
-  background: url("/public/images/icon-dollar.svg") no-repeat scroll 20px;
+  background: url("./images/icon-dollar.svg") no-repeat scroll 20px;
   background-color: var(--color-very-light-grayish-cyan);
 }
 
 #peopleNumber {
-  background: url("/public/images/icon-person.svg") no-repeat scroll 20px;
+  background: url("./images/icon-person.svg") no-repeat scroll 20px;
   background-color: var(--color-very-light-grayish-cyan);
 }
 
@@ -47,7 +47,7 @@ label {
   display: block;
 }
 
-input[type="number"] {
+input {
   appearance: textfield;
   -moz-appearance: textfield;
   font-family: var(--font-family);
@@ -61,11 +61,11 @@ input[type="number"] {
   outline: none;
   padding: 6px 17px;
 }
-input[type="number"]:hover {
+input:hover {
   outline: 0.0625rem solid var(--color-strong-cyan);
 }
 
-input[type="number"]:focus {
+input:focus {
   outline: 0.125rem solid var(--color-strong-cyan);
 }
 input::placeholder {
@@ -77,7 +77,7 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
-input[type="number"].wrongInput {
+input.wrongInput {
   outline: 0.125rem solid var(--color-red);
 }
 
