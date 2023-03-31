@@ -55,7 +55,7 @@ button:hover {
   color: var(--color-very-dark-cyan);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 48em) {
   :root {
     --font-size-result: var(--font-size-result-m);
   }
