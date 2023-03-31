@@ -27,8 +27,11 @@
   gap: 2.5rem;
 }
 #manualTipInput {
-  /* text-align: center; */
   padding: 0.375rem 0.875rem;
+}
+#manualTipInput::placeholder {
+  opacity: 0.75;
+  
 }
 #billInput {
   background: url("/images/icon-dollar.svg") no-repeat scroll 1.25rem;

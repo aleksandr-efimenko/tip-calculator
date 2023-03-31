@@ -48,7 +48,7 @@ function App() {
 
   return (
     <div className="App">
-      <div className={styles.logoContainer}></div>
+      <h1><div className={styles.logoContainer}></div></h1>
       <div className={styles.componentContainer}>
         <TipInput
           bill={bill}
