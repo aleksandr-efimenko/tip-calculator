@@ -12,17 +12,25 @@ function App() {
   const [manualTip, setManualTip] = useState("");
 
   const calculateTip = () => {
-    if (!bill) return;
     if (!bill || !people) {
       setTotal(0);
       setTipAmount(0);
       return;
-    };
+    }
+
     const tipToCalculate = manualTip ? manualTip : tip;
-    const tipAmount = ((bill * tipToCalculate) / 100 / people).toFixed(2);
-    const total = (((bill * tipToCalculate) / 100 + bill) / people).toFixed(2);
-    setTotal(total);
-    setTipAmount(tipAmount);
+    const tipAmount = (bill * tipToCalculate) / 100 / people;
+    const total = ((bill * tipToCalculate) / 100 + bill) / people;
+    if (tipAmount % 1 !== 0) {
+      setTipAmount(tipAmount.toFixed(2));
+    } else {
+      setTipAmount(tipAmount);
+    }
+    if (total % 1 !== 0) {
+      setTotal(total.toFixed(2));
+    } else {
+      setTotal(total);
+    }
   };
 
   const resetForm = () => {
@@ -35,7 +43,6 @@ function App() {
   };
 
   useEffect(() => {
-
     calculateTip();
   }, [bill, tip, manualTip, people]);
 
