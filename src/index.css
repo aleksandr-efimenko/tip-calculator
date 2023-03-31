@@ -53,6 +53,7 @@ button {
 button:hover {
   background-color: var(--color-light-cyan);
   color: var(--color-very-dark-cyan);
+  transition: all 0.2s ease-in-out;
 }
 
 @media (max-width: 48em) {
