@@ -171,6 +171,7 @@ input.wrongInput {
   font-family: var(--font-family);
   font-weight: var(--font-weight);
   font-size: var(--font-size-reset-button);
+  color: var(--color-very-dark-cyan);
 }
 
 .resetButton:disabled {
@@ -188,6 +189,7 @@ input.wrongInput {
     padding: 2rem 1.5rem;
     gap: 2rem;
     min-width: 100%;
+    border-radius: 1.5625rem  1.5625rem 0 0;
   }
   .tipInputsContainer {
     padding: 0 0.5rem;
