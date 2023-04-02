@@ -2,49 +2,56 @@ import { useEffect, useState } from "react";
 import TipOutput from "./components/TipOutput";
 import TipInput from "./components/TipInput";
 import styles from "./components/TipStyles.module.css";
+import {
+  calculateTipAmountPerPerson,
+  calculateTotalPerPerson,
+} from "./utils/tipCalculation";
 
 function App() {
   const [bill, setBill] = useState("");
-  const [tip, setTip] = useState(0);
-  const [people, setPeople] = useState("");
+  const [tipFromButton, setTip] = useState(0);
+  const [numberOPeople, setNumberOPeople] = useState(1);
   const [tipAmount, setTipAmount] = useState(0);
-  const [total, setTotal] = useState(0);
+  const [totalPerPerson, setTotalPerPerson] = useState(0);
   const [manualTip, setManualTip] = useState("");
 
   const calculateTip = () => {
-    if (!bill || !people) {
-      setTotal(0);
-      setTipAmount(0);
-      return;
-    }
+    const tipToCalculate = manualTip ? manualTip : tipFromButton;
+    const billNumber = Number(bill);
+    const tipToCalculateNumber = Number(tipToCalculate);
 
-    const tipToCalculate = manualTip ? manualTip : tip;
-    const tipAmount = (bill * tipToCalculate) / 100 / people;
-    const total = ((bill * tipToCalculate) / 100 + bill) / people;
-    if (tipAmount % 1 !== 0) {
-      setTipAmount(tipAmount.toFixed(2));
+    const tipAmountPerPerson = calculateTipAmountPerPerson(
+      billNumber,
+      tipToCalculateNumber,
+      numberOPeople
+    );
+    const totalPerPerson = calculateTotalPerPerson(
+      billNumber,
+      tipToCalculateNumber,
+      numberOPeople
+    );
+
+    if (tipAmountPerPerson % 1 !== 0 || totalPerPerson % 1 !== 0) {
+      setTipAmount(tipAmountPerPerson.toFixed(2));
+      setTotalPerPerson(totalPerPerson.toFixed(2));
     } else {
-      setTipAmount(tipAmount);
-    }
-    if (total % 1 !== 0) {
-      setTotal(total.toFixed(2));
-    } else {
-      setTotal(total);
+      setTipAmount(tipAmountPerPerson);
+      setTotalPerPerson(totalPerPerson);
     }
   };
 
   const resetForm = () => {
     setBill("");
-    setTip("");
+    setTip(0);
     setManualTip("");
-    setPeople("");
+    setNumberOPeople(1);
     setTipAmount(0);
-    setTotal(0);
+    setTotalPerPerson(0);
   };
 
   useEffect(() => {
     calculateTip();
-  }, [bill, tip, manualTip, people]);
+  }, [bill, tipFromButton, manualTip, numberOPeople]);
 
   return (
     <div className="App">
@@ -53,17 +60,17 @@ function App() {
         <TipInput
           bill={bill}
           setBill={setBill}
-          tip={tip}
+          tip={tipFromButton}
           setTip={setTip}
           manualTip={manualTip}
           setManualTip={setManualTip}
-          people={people}
-          setPeople={setPeople}
+          people={numberOPeople}
+          setPeople={setNumberOPeople}
         />
         <TipOutput
-          disabledReset={!bill && !tip && !manualTip && !people}
+          disabledReset={!bill && !tipFromButton && !manualTip && !numberOPeople}
           tipAmount={tipAmount}
-          total={total}
+          total={totalPerPerson}
           resetForm={resetForm}
         />
       </div>
