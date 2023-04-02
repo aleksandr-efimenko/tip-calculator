@@ -17,9 +17,9 @@ function App() {
 
   const calculateTip = () => {
     const tipToCalculate = manualTip ? manualTip : tipFromButton;
+
     const billNumber = Number(bill);
     const tipToCalculateNumber = Number(tipToCalculate);
-
     const tipAmountPerPerson = calculateTipAmountPerPerson(
       billNumber,
       tipToCalculateNumber,
@@ -68,7 +68,9 @@ function App() {
           setPeople={setNumberOPeople}
         />
         <TipOutput
-          disabledReset={!bill && !tipFromButton && !manualTip && !numberOPeople}
+          disabledReset={
+            !bill && !tipFromButton && !manualTip && !numberOPeople
+          }
           tipAmount={tipAmount}
           total={totalPerPerson}
           resetForm={resetForm}
