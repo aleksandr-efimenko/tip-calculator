@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import TipOutput from "./components/TipOutput";
 import TipInput from "./components/TipInput";
-import styles from "./components/tipStyles.module.css";
+import styles from "./components/TipStyles.module.css";
 import {
   calculateTipAmountPerPerson,
   calculateTotalPerPerson,

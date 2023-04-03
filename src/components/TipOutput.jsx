@@ -1,6 +1,6 @@
 import React from "react";
-import styles from "./tipStyles.module.css";
-import buttonStyles from "./buttonStyles.module.css";
+import styles from "./TipStyles.module.css";
+import buttonStyles from "./ButtonStyles.module.css";
 
 export default function TipOutput({
   tipAmount,
