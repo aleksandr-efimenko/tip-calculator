@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./tipStyles.module.css";
 import buttonStyles from "./buttonStyles.module.css";
+import formStyles from "./formStyles.module.css";
 import classNames from "classnames";
 
 export default function TipInput({
@@ -72,12 +73,12 @@ export default function TipInput({
   };
 
   return (
-    <div className={styles.tipInputsContainer}>
-      <div className={styles.billInputBlock}>
-        <div className={styles.inputLabelBox}>
+    <div className={formStyles.tipInputsContainer}>
+      <div>
+        <div className={formStyles.inputLabelBox}>
           <label htmlFor="bill-input">Bill</label>
           {bill === 0 && (
-            <p className={styles.wrongInputMessage}>Can't be zero</p>
+            <p className={formStyles.wrongInputMessage}>Can't be zero</p>
           )}
         </div>
         
@@ -88,14 +89,14 @@ export default function TipInput({
           name="bill-input"
           placeholder="0"
           step="0.01"
-          className={classNames(styles.billInput, bill === 0 ? styles.wrongInput : "")}
+          className={classNames(formStyles.billInput, bill === 0 ? formStyles.wrongInput : "")}
         />
       </div>
-      <div className={styles.tipSelectBlock}>
-        <div className={styles.inputLabelBox}>
+      <div>
+        <div className={formStyles.inputLabelBox}>
           <label htmlFor="tip-input">Select Tip %</label>
           {manualTip === 0 && (
-            <p className={styles.wrongInputMessage}>Shouldn't be zero</p>
+            <p className={formStyles.wrongInputMessage}>Shouldn't be zero</p>
           )}
         </div>
         <div className={buttonStyles.tipButtonsContainer}>
@@ -119,17 +120,17 @@ export default function TipInput({
             type="number"
             step="0.5"
             placeholder="Custom"
-            className={classNames(styles.manualTipInput, {[styles.wrongInput]: manualTip === 0}) }
+            className={classNames(formStyles.manualTipInput, {[formStyles.wrongInput]: manualTip === 0}) }
             value={manualTip}
             onChange={handleEnterManualTip}
           />
         </div>
       </div>
-      <div className={styles.peopleNumberBlock}>
-        <div className={styles.inputLabelBox}>
+      <div className={formStyles.peopleNumberBlock}>
+        <div className={formStyles.inputLabelBox}>
           <label htmlFor="people-number">Number of people</label>
           {people === 0 && (
-            <p className={styles.wrongInputMessage}>Can't be zero</p>
+            <p className={formStyles.wrongInputMessage}>Can't be zero</p>
           )}
         </div>
         <input
@@ -139,7 +140,7 @@ export default function TipInput({
           placeholder="0"
           onChange={handleEnterPeople}
           value={people}
-          className={classNames(styles.peopleNumberInput, people === 0 ? styles.wrongInput : "")}
+          className={classNames(formStyles.peopleNumberInput, people === 0 ? formStyles.wrongInput : "")}
         />
       </div>
     </div>
