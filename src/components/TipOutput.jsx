@@ -29,7 +29,7 @@ export default function TipOutput({
         </div>
         <button
           disabled={disabledReset}
-          className={buttonStyles.resetButton}
+          // className={buttonStyles.resetButton}
           onClick={resetForm}
         >
           RESET
