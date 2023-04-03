@@ -1,5 +1,5 @@
 import { calculateTipAmountPerPerson, calculateTotalPerPerson } from '../tipCalculation';
-
+import { describe, expect, it } from "vitest";
 /**
  * 
  * @param {number} bill
@@ -31,8 +31,8 @@ describe('calculateTipAmountPerPerson', () => {
 
   it('should return the correct tip amount per person', () => {
     expect(calculateTipAmountPerPerson(100, 10, 2)).toBe(5);
-    expect( calculateTipAmountPerPerson(50.25, 15, 3)).toBe(2.81);
-    expect( calculateTipAmountPerPerson(100, 10, 3)).toBe(3.33);
+    expect(Number(calculateTipAmountPerPerson(50.25, 15, 3).toFixed(2))).toBe(2.51);
+    expect(Number(calculateTipAmountPerPerson(100, 10, 3).toFixed(2))).toBe(3.33);
   });
 });
 
@@ -66,11 +66,16 @@ describe('calculateTotalPerPerson', () => {
 
   it('should return the correct total per person', () => {
     const result = calculateTotalPerPerson(100, 10, 2);
-    expect(result).toBe(110);
+    expect(result).toBe(55);
   });
 
   it('should return the correct total per person', () => {
-    const result = calculateTotalPerPerson(50.25, 15, 3);
-    expect(result).toBe(58.81);
+    const result = Number(calculateTotalPerPerson(50.25, 15, 3).toFixed(2));
+    expect(result).toBe(19.26);
+  });
+
+  it('should return the correct total per person', () => {
+    const result = Number(calculateTotalPerPerson(100, 10, 3).toFixed(2));
+    expect(result).toBe(36.67);
   });
 });

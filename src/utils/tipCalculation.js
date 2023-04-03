@@ -9,8 +9,7 @@
 
 export function calculateTipAmountPerPerson(bill, tipPercentage, numberOPeople) {
   if (!bill || !tipPercentage || !numberOPeople) return 0;
-  const result = (bill * tipPercentage) / 100 / numberOPeople;
-  return result.toFixed(2);
+  return (bill * tipPercentage) / 100 / numberOPeople;
 }
 
 /**
@@ -23,6 +22,5 @@ export function calculateTipAmountPerPerson(bill, tipPercentage, numberOPeople) 
  */
 export function calculateTotalPerPerson(bill, tipPercentage, numberOPeople) {
   if (!bill || !tipPercentage || !numberOPeople) return 0;
-  const result = (bill + bill * tipPercentage / 100) / numberOPeople;
-  return result.toFixed(2);
+  return (bill + bill * tipPercentage / 100) / numberOPeople;
 }
