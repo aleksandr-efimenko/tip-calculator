@@ -17,7 +17,6 @@
   gap: 3rem;
 }
 .tipOutputsContainer {
-  /* margin-inline-start: 1.5rem; */
   border-radius: 0.9375rem;
   background-color: var(--color-very-dark-cyan);
   min-width: 25.8125rem;
