@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "../styles/TipStyles.module.css";
-import buttonStyles from "..styles/ButtonStyles.module.css";
-import formStyles from "../styles/TipForm.module.css";
+import buttonStyles from "../styles/ButtonStyles.module.css";
+import formStyles from "../styles/FormStyles.module.css";
 import classNames from "classnames";
 
 export default function TipInput({
