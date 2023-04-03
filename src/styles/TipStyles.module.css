@@ -1,31 +1,31 @@
 .logoContainer {
   background-image: url("/images/logo.svg");
-  min-height: 3.4375rem;
-  min-width: 5.375rem;
+  min-height: 5.5rem;
+  min-width: 8.6rem;
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  margin-block-end: 5.4375rem;
+  margin-block-end: 8.7rem;
 }
 .componentContainer {
   background-color: var(--color-white);
-  border-radius: 1.5625rem;
+  border-radius: 2.5rem;
   display: flex;
-  padding: 2rem 2rem 2rem 3rem;
-  min-width: 56rem;
-  max-width: 57.5rem;
-  gap: 3rem;
+  padding: 3.2rem 3.2rem 3.2rem 4.8rem;
+  min-width: 89.6rem;
+  max-width: 92rem;
+  gap: 4.8rem;
 }
 .tipOutputsContainer {
-  border-radius: 0.9375rem;
+  border-radius: 1.5rem;
   background-color: var(--color-very-dark-cyan);
-  min-width: 25.8125rem;
+  min-width: 4.1rem;
   overflow: auto;
   flex: 1;
   position: relative;
 }
 .tipOutputsInner {
-  margin: 2.5rem;
+  margin: 4rem;
   position: absolute;
   top: 0;
   left: 0;
@@ -42,7 +42,7 @@
 }
 .tipResultContainer {
   min-width: fit-content;
-  margin-inline-end: .5rem;
+  margin-inline-end: .8rem;
 }
 .tipResultLabel {
   font-size: var(--font-size-label);
@@ -50,9 +50,9 @@
   color: var(--color-white);
 }
 .tipResultLabelDescription {
-  font-size: 0.8125rem;
+  font-size: 1.3rem;
   color: var(--color-grayish-cyan);
-  line-height: 1.1875rem;
+  line-height: 1.9rem;
 }
 .tipResultValue {
   font-size: var(--font-size-result);
@@ -63,23 +63,23 @@
 
 @media (max-width: 48em) {
   .logoContainer {
-    margin-block: 3.125rem 2.5rem;
+    margin-block: 5rem 4rem;
   }
   .componentContainer {
     flex-direction: column;
-    padding: 2rem 1.5rem;
-    gap: 2rem;
+    padding: 3.2rem 2.4rem;
+    gap: 3.2rem;
     min-width: 100%;
-    border-radius: 1.5625rem  1.5625rem 0 0;
+    border-radius: 2.5rem  2.5rem 0 0;
   }
   .tipOutputsContainer {
     min-width: 100%;
   }
   .tipOutputsInner {
     position: relative;
-    margin: 1.5rem;
+    margin: 2.4rem;
   }
   .tipResultsContainer {
-    margin-block-start: 0.8125rem;
+    margin-block-start: 1.3rem;
   }
 }

@@ -1,31 +1,33 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap");
 
 :root {
-  --font-family: "Space Mono", monospace;
-  --font-weight: 700;
-
+  --color-dark-grayish-cyan: hsl(186, 14%, 43%);
+  --color-disables-button: hsl(183, 78%, 24%);
+  --color-grayish-cyan: hsl(184, 14%, 56%);
+  --color-light-cyan: hsl(173, 61%, 77%);
+  --color-light-grayish-cyan: hsl(185, 41%, 84%);
+  --color-red: hsl(13, 70%, 61%);
   --color-strong-cyan: hsl(172, 67%, 45%);
   --color-very-dark-cyan: hsl(183, 100%, 15%);
-  --color-dark-grayish-cyan: hsl(186, 14%, 43%);
-  --color-grayish-cyan: hsl(184, 14%, 56%);
-  --color-light-grayish-cyan: hsl(185, 41%, 84%);
+  --color-very-dark-grayish-cyan: hsl(180, 18%, 40%);
   --color-very-light-grayish-cyan: hsl(189, 41%, 97%);
   --color-white: hsl(0, 0%, 100%);
-  --color-light-cyan: hsl(173, 61%, 77%);
-  --color-red: hsl(13, 70%, 61%);
-  --color-very-dark-grayish-cyan: hsl(180, 18%, 40%);
-  --color-disables-button: hsl(183, 78%, 24%);
 
-  --font-size-input: 1.5rem;
-  --font-size-label: 1rem;
-  --lh-label: 1.5rem;
-
-  --font-size-reset-button: 1.25rem;
-  --font-size-result-d: 3rem;
-  --font-size-result-m: 2rem;
+  --font-family: "Space Mono", monospace;
+  --font-size-input: 2.4rem;
+  --font-size-label: 1.6rem;
+  --font-size-reset-button: 2rem;
+  --font-size-result-d: 4.8rem;
+  --font-size-result-m: 3.2rem;
   --font-size-result: var(--font-size-result-d);
-  --lh-result: 4.4375rem;
-  --ls-result: -0.0625rem;
+
+  --font-weight: 700;
+
+  --lh-label: 2.4rem;
+  --lh-result: 7.1rem;
+
+  --ls-result: -0.1rem;
+  font-size: 10px;
 }
 * {
   box-sizing: border-box;
@@ -34,12 +36,12 @@
 }
 
 body {
-  font-family: var(--font-family);
-  font-weight: var(--font-weight);
+  align-items: center;
   background-color: var(--color-light-grayish-cyan);
   display: flex;
+  font-family: var(--font-family);
+  font-weight: var(--font-weight);
   justify-content: center;
-  align-items: center;
   min-height: 100vh;
   min-height: 100svh;
 }
