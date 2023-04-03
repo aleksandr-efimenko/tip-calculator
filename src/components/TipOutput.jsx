@@ -1,5 +1,6 @@
 import React from "react";
-import styles from "./TipStyles.module.css";
+import styles from "./tipStyles.module.css";
+import buttonStyles from "./buttonStyles.module.css";
 
 export default function TipOutput({
   tipAmount,
@@ -28,7 +29,7 @@ export default function TipOutput({
         </div>
         <button
           disabled={disabledReset}
-          className={styles.resetButton}
+          className={buttonStyles.resetButton}
           onClick={resetForm}
         >
           RESET

@@ -1,5 +1,6 @@
 import React from "react";
-import styles from "./TipStyles.module.css";
+import styles from "./tipStyles.module.css";
+import buttonStyles from "./buttonStyles.module.css";
 import classNames from "classnames";
 
 export default function TipInput({
@@ -84,11 +85,10 @@ export default function TipInput({
           onChange={handleEnterBill}
           value={bill}
           type="number"
-          id={styles.billInput}
           name="bill-input"
           placeholder="0"
           step="0.01"
-          className={bill === 0 ? styles.wrongInput : ""}
+          className={classNames(styles.billInput, bill === 0 ? styles.wrongInput : "")}
         />
       </div>
       <div className={styles.tipSelectBlock}>
@@ -98,14 +98,14 @@ export default function TipInput({
             <p className={styles.wrongInputMessage}>Shouldn't be zero</p>
           )}
         </div>
-        <div className={styles.tipButtonsContainer}>
+        <div className={buttonStyles.tipButtonsContainer}>
           {tipButtons.map((selectedTip) => {
             return (
               <button
                 key={selectedTip}
                 id={selectedTip}
                 name="tip-button"
-                className={classNames(styles.tipButton, {
+                className={classNames(buttonStyles.tipButton, {
                   [styles.active]: selectedTip === tip && !manualTip,
                 })}
                 value={selectedTip}
@@ -119,8 +119,7 @@ export default function TipInput({
             type="number"
             step="0.5"
             placeholder="Custom"
-            id={styles.manualTipInput}
-            className={classNames(styles.manualTip, {[styles.wrongInput]: manualTip === 0}) }
+            className={classNames(styles.manualTipInput, {[styles.wrongInput]: manualTip === 0}) }
             value={manualTip}
             onChange={handleEnterManualTip}
           />
@@ -136,12 +135,11 @@ export default function TipInput({
         <input
           min={1}
           type="number"
-          id={styles.peopleNumber}
           name="people-number"
           placeholder="0"
           onChange={handleEnterPeople}
           value={people}
-          className={people === 0 ? styles.wrongInput : ""}
+          className={classNames(styles.peopleNumberInput, people === 0 ? styles.wrongInput : "")}
         />
       </div>
     </div>
