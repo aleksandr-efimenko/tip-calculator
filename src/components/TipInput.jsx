@@ -3,6 +3,17 @@ import styles from "../styles/TipStyles.module.css";
 import buttonStyles from "../styles/ButtonStyles.module.css";
 import formStyles from "../styles/FormStyles.module.css";
 import classNames from "classnames";
+import { initValues } from "../App";
+
+const handleEnter = (value, maxValue) => {
+  if (!value) {
+    return "";
+  }
+  let valueNumber = Number(value);
+  valueNumber = Math.min(valueNumber, maxValue);
+  valueNumber = Math.abs(valueNumber);
+  return valueNumber;
+};
 
 export default function TipInput({
   bill,
@@ -15,60 +26,26 @@ export default function TipInput({
   setPeople,
 }) {
   const tipButtons = [5, 10, 15, 25, 50];
-  const maxBill = 100_000;
-  const maxManualTip = 100;
-  const maxPeople = 100;
 
   const handleEnterBill = (e) => {
-    if (!e.target.value) {
-      setBill('');
-      return;
-    }
-    let value = Number(e.target.value);
-    if (value > maxBill) {
-      value = maxBill;
-    }
-    if (value < 0) {
-      value = value * -1;
-    }
-
+    const value = handleEnter(e.target.value, initValues.maxBill);
     setBill(value);
   };
 
   const handleEnterManualTip = (e) => {
-    if (!e.target.value) {
-      setManualTip('');
-      return;
-    }
-    let value = Number(e.target.value);
-    if (value > maxManualTip) {
-      value = maxManualTip;
-    }
-    if (value < 0) {
-      value = value * -1;
-    }
-    setTip("");
+    const value = handleEnter(e.target.value, initValues.maxManualTip);
+    setTip(initValues.manualTip);
     setManualTip(value);
   };
 
   const handleSetTip = (e) => {
-    let value = Number(e.target.value);
-    setManualTip("");
+    const value = Number(e.target.value);
+    setManualTip(initValues.manualTip);
     setTip(value);
   };
 
   const handleEnterPeople = (e) => {
-    if (!e.target.value) {
-      setPeople('');
-      return;
-    }
-    let value = Number(e.target.value);
-    if (value > maxPeople) {
-      value = maxPeople;
-    }
-    if (value < 0) {
-      value = value * -1;
-    }
+    const value = handleEnter(e.target.value, initValues.maxPeople);
     setPeople(value);
   };
 
@@ -81,7 +58,7 @@ export default function TipInput({
             <p className={formStyles.wrongInputMessage}>Can't be zero</p>
           )}
         </div>
-        
+
         <input
           onChange={handleEnterBill}
           value={bill}
@@ -89,7 +66,10 @@ export default function TipInput({
           name="bill-input"
           placeholder="0"
           step="0.01"
-          className={classNames(formStyles.billInput, bill === 0 ? formStyles.wrongInput : "")}
+          className={classNames(
+            formStyles.billInput,
+            bill === 0 ? formStyles.wrongInput : ""
+          )}
         />
       </div>
       <div>
@@ -120,7 +100,9 @@ export default function TipInput({
             type="number"
             step="0.5"
             placeholder="Custom"
-            className={classNames(formStyles.manualTipInput, {[formStyles.wrongInput]: manualTip === 0}) }
+            className={classNames(formStyles.manualTipInput, {
+              [formStyles.wrongInput]: manualTip === 0,
+            })}
             value={manualTip}
             onChange={handleEnterManualTip}
           />
@@ -140,7 +122,10 @@ export default function TipInput({
           placeholder="0"
           onChange={handleEnterPeople}
           value={people}
-          className={classNames(formStyles.peopleNumberInput, people === 0 ? formStyles.wrongInput : "")}
+          className={classNames(
+            formStyles.peopleNumberInput,
+            people === 0 ? formStyles.wrongInput : ""
+          )}
         />
       </div>
     </div>

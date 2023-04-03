@@ -7,21 +7,33 @@ import {
   calculateTotalPerPerson,
 } from "./utils/tipCalculation";
 
+export const initValues = {
+  bill: "",
+  maxBill: 100_000,
+  tipFromButton: 0,
+  manualTip: "",
+  maxManualTip: 100,
+  people: 1,
+  maxPeople: 100,
+  tipAmount: 0,
+  total: 0,
+};
+
 function App() {
-  const [bill, setBill] = useState("");
-  const [tipFromButton, setTip] = useState(0);
-  const [numberOPeople, setNumberOPeople] = useState(1);
-  const [tipAmount, setTipAmount] = useState(0);
-  const [totalPerPerson, setTotalPerPerson] = useState(0);
-  const [manualTip, setManualTip] = useState("");
+  const [bill, setBill] = useState(initValues.bill);
+  const [tipFromButton, setTip] = useState(initValues.tipFromButton);
+  const [numberOPeople, setNumberOPeople] = useState(initValues.people);
+  const [tipAmount, setTipAmount] = useState(initValues.tipAmount);
+  const [totalPerPerson, setTotalPerPerson] = useState(initValues.total);
+  const [manualTip, setManualTip] = useState(initValues.manualTip);
 
   const resetForm = () => {
-    setBill("");
-    setTip(0);
-    setManualTip("");
-    setNumberOPeople(1);
-    setTipAmount(0);
-    setTotalPerPerson(0);
+    setBill(initValues.bill);
+    setTip(initValues.tipFromButton);
+    setManualTip(initValues.manualTip);
+    setNumberOPeople(initValues.people);
+    setTipAmount(initValues.tipAmount);
+    setTotalPerPerson(initValues.total);
   };
 
   useEffect(() => {
