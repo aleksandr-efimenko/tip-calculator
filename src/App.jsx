@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import TipOutput from "../components/TipOutput";
+import TipOutput from "./components/TipOutput";
 import TipInput from "./components/TipInput";
 import styles from "./styles/TipStyles.module.css";
 import {
