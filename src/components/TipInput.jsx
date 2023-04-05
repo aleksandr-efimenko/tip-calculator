@@ -1,5 +1,4 @@
 import React from "react";
-import styles from "../styles/TipStyles.module.css";
 import buttonStyles from "../styles/ButtonStyles.module.css";
 import formStyles from "../styles/FormStyles.module.css";
 import classNames from "classnames";
@@ -87,7 +86,7 @@ export default function TipInput({
                 id={selectedTip}
                 name="tip-button"
                 className={classNames(buttonStyles.tipButton, {
-                  [styles.active]: selectedTip === tip && !manualTip,
+                  [buttonStyles.active]: selectedTip === tip && !manualTip,
                 })}
                 value={selectedTip}
                 onClick={handleSetTip}
